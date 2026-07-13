@@ -76,3 +76,8 @@ export async function getApplications() {
   if (error) throw error;
   return data;
 }
+
+export async function deleteApplication(id) {
+  const { error } = await supabase.from("purchase_applications").delete().eq("id", id);
+  if (error) throw error;
+}
